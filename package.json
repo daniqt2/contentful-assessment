@@ -1,0 +1,15 @@
+{
+  "name": "contentful-assestment",
+  "version": "0.0.0",
+  "description": "Full Stack Developer Contenful Assestment",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "export": "contentful space export --config config/export.json",
+    "import": "contentful space import --config config/import.json"
+  },
+  "author": "Tailor Hub",
+  "license": "ISC",
+  "dependencies": {
+    "contentful-cli": "^3.1.43"
+  }
+}

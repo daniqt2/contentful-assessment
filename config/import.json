@@ -1,0 +1,9 @@
+{
+    "spaceId": "<Space Id>",
+    "managementToken": "<CMA Token>",
+    "environmentId": "master",
+    "contentFile": "data/contentful-space.json",
+    "skipContentModel": false,
+    "host": "api.contentful.com",
+    "errorLogFile": "./error.log"
+}

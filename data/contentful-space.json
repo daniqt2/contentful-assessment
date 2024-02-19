@@ -1,0 +1,2931 @@
+{
+  "contentTypes": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "z1u5w6pzdc79"
+          }
+        },
+        "id": "category",
+        "type": "ContentType",
+        "createdAt": "2024-02-15T15:34:33.043Z",
+        "updatedAt": "2024-02-15T15:34:53.065Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2024-02-15T15:34:53.065Z",
+        "firstPublishedAt": "2024-02-15T15:34:33.498Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5hShE7lhLdfQiaY3XkAZVQ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5hShE7lhLdfQiaY3XkAZVQ"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5hShE7lhLdfQiaY3XkAZVQ"
+          }
+        }
+      },
+      "displayField": "name",
+      "name": "Category",
+      "description": "",
+      "fields": [
+        {
+          "id": "name",
+          "name": "Name",
+          "type": "Symbol",
+          "localized": true,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "description",
+          "name": "Description",
+          "type": "Text",
+          "localized": true,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "z1u5w6pzdc79"
+          }
+        },
+        "id": "book",
+        "type": "ContentType",
+        "createdAt": "2024-02-15T15:38:07.078Z",
+        "updatedAt": "2024-02-15T15:56:41.319Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 7,
+        "publishedAt": "2024-02-15T15:56:41.319Z",
+        "firstPublishedAt": "2024-02-15T15:38:07.392Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5hShE7lhLdfQiaY3XkAZVQ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5hShE7lhLdfQiaY3XkAZVQ"
+          }
+        },
+        "publishedCounter": 4,
+        "version": 8,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5hShE7lhLdfQiaY3XkAZVQ"
+          }
+        }
+      },
+      "displayField": "title",
+      "name": "Book",
+      "description": "",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "Symbol",
+          "localized": true,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "authors",
+          "name": "Authors",
+          "type": "Array",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Link",
+            "validations": [
+              {
+                "linkContentType": [
+                  "author"
+                ]
+              }
+            ],
+            "linkType": "Entry"
+          }
+        },
+        {
+          "id": "categories",
+          "name": "Categories",
+          "type": "Array",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Link",
+            "validations": [
+              {
+                "linkContentType": [
+                  "category"
+                ]
+              }
+            ],
+            "linkType": "Entry"
+          }
+        },
+        {
+          "id": "synopsis",
+          "name": "Synopsis",
+          "type": "RichText",
+          "localized": true,
+          "required": false,
+          "validations": [
+            {
+              "enabledMarks": [
+                "bold",
+                "italic",
+                "underline"
+              ],
+              "message": "Only bold, italic, and underline marks are allowed"
+            },
+            {
+              "enabledNodeTypes": [
+                "heading-1",
+                "heading-2",
+                "heading-3",
+                "hyperlink"
+              ],
+              "message": "Only heading 1, heading 2, heading 3, and link to Url nodes are allowed"
+            },
+            {
+              "nodes": {
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "status",
+          "name": "Status",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "in": [
+                "Available",
+                "On loan",
+                "Reserved",
+                "Out of Stock",
+                "Sold"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "z1u5w6pzdc79"
+          }
+        },
+        "id": "author",
+        "type": "ContentType",
+        "createdAt": "2024-02-15T15:41:04.381Z",
+        "updatedAt": "2024-02-15T15:41:04.760Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-02-15T15:41:04.760Z",
+        "firstPublishedAt": "2024-02-15T15:41:04.760Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5hShE7lhLdfQiaY3XkAZVQ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5hShE7lhLdfQiaY3XkAZVQ"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5hShE7lhLdfQiaY3XkAZVQ"
+          }
+        }
+      },
+      "displayField": "name",
+      "name": "Author",
+      "description": "",
+      "fields": [
+        {
+          "id": "name",
+          "name": "Name",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "nationality",
+          "name": "Nationality",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "biography",
+          "name": "Biography",
+          "type": "Text",
+          "localized": true,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    }
+  ],
+  "editorInterfaces": [
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "z1u5w6pzdc79",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 4,
+        "createdAt": "2024-02-15T15:34:33.640Z",
+        "createdBy": {
+          "sys": {
+            "id": "5hShE7lhLdfQiaY3XkAZVQ",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2024-02-15T15:34:53.682Z",
+        "updatedBy": {
+          "sys": {
+            "id": "5hShE7lhLdfQiaY3XkAZVQ",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "category",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "name",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "description",
+          "widgetId": "markdown",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "z1u5w6pzdc79",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 8,
+        "createdAt": "2024-02-15T15:38:07.590Z",
+        "createdBy": {
+          "sys": {
+            "id": "5hShE7lhLdfQiaY3XkAZVQ",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2024-02-15T15:56:42.093Z",
+        "updatedBy": {
+          "sys": {
+            "id": "5hShE7lhLdfQiaY3XkAZVQ",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "book",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "title",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "authors",
+          "widgetId": "entryLinksEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "categories",
+          "widgetId": "entryLinksEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "synopsis",
+          "widgetId": "richTextEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "status",
+          "widgetId": "radio",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "z1u5w6pzdc79",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 2,
+        "createdAt": "2024-02-15T15:41:04.948Z",
+        "createdBy": {
+          "sys": {
+            "id": "5hShE7lhLdfQiaY3XkAZVQ",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2024-02-15T15:41:05.752Z",
+        "updatedBy": {
+          "sys": {
+            "id": "5hShE7lhLdfQiaY3XkAZVQ",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "author",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "name",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "nationality",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "biography",
+          "widgetId": "markdown",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "z1u5w6pzdc79"
+          }
+        },
+        "id": "2cWHvlZqfLjN8jJPPTHSRG",
+        "type": "Entry",
+        "createdAt": "2024-02-15T15:48:19.665Z",
+        "updatedAt": "2024-02-15T15:48:19.665Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "category"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Science Fiction",
+          "es": "Ciencia Ficción"
+        },
+        "description": {
+          "en-US": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum luctus dui, in lobortis magna feugiat eget. Nulla finibus est vel lacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id odio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, ornare at malesuada ut, pellentesque at est. Morbi eget imperdiet tortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu bibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras vestibulum sit amet enim id ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus. ",
+          "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum luctus dui, in lobortis magna feugiat eget. Nulla finibus est vel lacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id odio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, ornare at malesuada ut, pellentesque at est. Morbi eget imperdiet tortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu bibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras vestibulum sit amet enim id ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus. "
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "z1u5w6pzdc79"
+          }
+        },
+        "id": "3RF2Oky9fNlVqaLBgEIGIn",
+        "type": "Entry",
+        "createdAt": "2024-02-15T15:48:37.107Z",
+        "updatedAt": "2024-02-15T15:48:51.986Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 3,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "category"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Fantasy",
+          "es": "Fantasía"
+        },
+        "description": {
+          "en-US": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum luctus dui, in lobortis magna feugiat eget. Nulla finibus est vel lacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id odio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, ornare at malesuada ut, pellentesque at est. Morbi eget imperdiet tortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu bibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras vestibulum sit amet enim id ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus. ",
+          "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum luctus dui, in lobortis magna feugiat eget. Nulla finibus est vel lacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id odio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, ornare at malesuada ut, pellentesque at est. Morbi eget imperdiet tortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu bibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras vestibulum sit amet enim id ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus. "
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "z1u5w6pzdc79"
+          }
+        },
+        "id": "73uO681GQuu7jCfFiwP4oi",
+        "type": "Entry",
+        "createdAt": "2024-02-15T15:49:18.388Z",
+        "updatedAt": "2024-02-15T15:49:18.388Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "category"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Thriller",
+          "es": "Thriller"
+        },
+        "description": {
+          "en-US": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum luctus dui, in lobortis magna feugiat eget. Nulla finibus est vel lacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id odio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, ornare at malesuada ut, pellentesque at est. Morbi eget imperdiet tortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu bibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras vestibulum sit amet enim id ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus. ",
+          "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum luctus dui, in lobortis magna feugiat eget. Nulla finibus est vel lacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id odio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, ornare at malesuada ut, pellentesque at est. Morbi eget imperdiet tortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu bibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras vestibulum sit amet enim id ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus. "
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "z1u5w6pzdc79"
+          }
+        },
+        "id": "5aLoGEXzT20pVjJGKel1GL",
+        "type": "Entry",
+        "createdAt": "2024-02-15T15:49:36.063Z",
+        "updatedAt": "2024-02-15T15:49:36.063Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "category"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Romance",
+          "es": "Romance"
+        },
+        "description": {
+          "en-US": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum luctus dui, in lobortis magna feugiat eget. Nulla finibus est vel lacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id odio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, ornare at malesuada ut, pellentesque at est. Morbi eget imperdiet tortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu bibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras vestibulum sit amet enim id ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus. ",
+          "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum luctus dui, in lobortis magna feugiat eget. Nulla finibus est vel lacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id odio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, ornare at malesuada ut, pellentesque at est. Morbi eget imperdiet tortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu bibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras vestibulum sit amet enim id ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus. "
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "z1u5w6pzdc79"
+          }
+        },
+        "id": "7Pa0dTD0u7nFTEzeco1g5",
+        "type": "Entry",
+        "createdAt": "2024-02-15T15:50:02.188Z",
+        "updatedAt": "2024-02-15T15:50:02.188Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "category"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Self-Help",
+          "es": "Autoayuda"
+        },
+        "description": {
+          "en-US": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum luctus dui, in lobortis magna feugiat eget. Nulla finibus est vel lacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id odio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, ornare at malesuada ut, pellentesque at est. Morbi eget imperdiet tortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu bibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras vestibulum sit amet enim id ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus. ",
+          "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum luctus dui, in lobortis magna feugiat eget. Nulla finibus est vel lacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id odio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, ornare at malesuada ut, pellentesque at est. Morbi eget imperdiet tortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu bibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras vestibulum sit amet enim id ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus. "
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "z1u5w6pzdc79"
+          }
+        },
+        "id": "6LfxJVpfbUOJYp7tqw0OC7",
+        "type": "Entry",
+        "createdAt": "2024-02-15T15:50:25.225Z",
+        "updatedAt": "2024-02-15T15:50:25.225Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "category"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Biography",
+          "es": "Biografía"
+        },
+        "description": {
+          "en-US": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum luctus dui, in lobortis magna feugiat eget. Nulla finibus est vel lacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id odio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, ornare at malesuada ut, pellentesque at est. Morbi eget imperdiet tortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu bibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras vestibulum sit amet enim id ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus. ",
+          "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum luctus dui, in lobortis magna feugiat eget. Nulla finibus est vel lacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id odio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, ornare at malesuada ut, pellentesque at est. Morbi eget imperdiet tortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu bibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras vestibulum sit amet enim id ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus. "
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "z1u5w6pzdc79"
+          }
+        },
+        "id": "hgsrRUHqUQk6WJw3StVrt",
+        "type": "Entry",
+        "createdAt": "2024-02-15T15:50:46.599Z",
+        "updatedAt": "2024-02-15T15:50:46.599Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "category"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Science",
+          "es": "Ciencia"
+        },
+        "description": {
+          "en-US": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum luctus dui, in lobortis magna feugiat eget. Nulla finibus est vel lacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id odio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, ornare at malesuada ut, pellentesque at est. Morbi eget imperdiet tortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu bibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras vestibulum sit amet enim id ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus. ",
+          "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum luctus dui, in lobortis magna feugiat eget. Nulla finibus est vel lacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id odio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, ornare at malesuada ut, pellentesque at est. Morbi eget imperdiet tortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu bibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras vestibulum sit amet enim id ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus. "
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "z1u5w6pzdc79"
+          }
+        },
+        "id": "6VxKcpyQDRtY7akrrs4aRv",
+        "type": "Entry",
+        "createdAt": "2024-02-15T15:52:40.082Z",
+        "updatedAt": "2024-02-15T15:52:40.082Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "author"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Frank Herbert"
+        },
+        "nationality": {
+          "en-US": "United states"
+        },
+        "biography": {
+          "en-US": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum luctus dui, in lobortis magna feugiat eget. Nulla finibus est vel lacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id odio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, ornare at malesuada ut, pellentesque at est. Morbi eget imperdiet tortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu bibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras vestibulum sit amet enim id ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus. ",
+          "es": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum luctus dui, in lobortis magna feugiat eget. Nulla finibus est vel lacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id odio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, ornare at malesuada ut, pellentesque at est. Morbi eget imperdiet tortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu bibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras vestibulum sit amet enim id ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus. "
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "z1u5w6pzdc79"
+          }
+        },
+        "id": "4mL2JUYNf1CDiBtil8byiC",
+        "type": "Entry",
+        "createdAt": "2024-02-15T15:53:02.595Z",
+        "updatedAt": "2024-02-15T15:53:02.595Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "author"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "William Gibson"
+        },
+        "nationality": {
+          "en-US": "United States"
+        },
+        "biography": {
+          "en-US": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum luctus dui, in lobortis magna feugiat eget. Nulla finibus est vel lacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id odio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, ornare at malesuada ut, pellentesque at est. Morbi eget imperdiet tortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu bibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras vestibulum sit amet enim id ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus. ",
+          "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum luctus dui, in lobortis magna feugiat eget. Nulla finibus est vel lacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id odio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, ornare at malesuada ut, pellentesque at est. Morbi eget imperdiet tortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu bibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras vestibulum sit amet enim id ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus. "
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "z1u5w6pzdc79"
+          }
+        },
+        "id": "7gwpkFCx4YrL8FS0vlFsCj",
+        "type": "Entry",
+        "createdAt": "2024-02-15T15:53:23.397Z",
+        "updatedAt": "2024-02-15T15:53:23.397Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "author"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Andy Weir"
+        },
+        "nationality": {
+          "en-US": "United States"
+        },
+        "biography": {
+          "en-US": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum luctus dui, in lobortis magna feugiat eget. Nulla finibus est vel lacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id odio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, ornare at malesuada ut, pellentesque at est. Morbi eget imperdiet tortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu bibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras vestibulum sit amet enim id ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus. ",
+          "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum luctus dui, in lobortis magna feugiat eget. Nulla finibus est vel lacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id odio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, ornare at malesuada ut, pellentesque at est. Morbi eget imperdiet tortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu bibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras vestibulum sit amet enim id ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus. "
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "z1u5w6pzdc79"
+          }
+        },
+        "id": "eS0EMeEuPeiPYL18lkEYm",
+        "type": "Entry",
+        "createdAt": "2024-02-15T15:54:18.103Z",
+        "updatedAt": "2024-02-15T15:54:18.103Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "author"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "J.R.R. Tolkien"
+        },
+        "nationality": {
+          "en-US": "United Kingdom"
+        },
+        "biography": {
+          "en-US": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum luctus dui, in lobortis magna feugiat eget. Nulla finibus est vel lacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id odio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, ornare at malesuada ut, pellentesque at est. Morbi eget imperdiet tortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu bibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras vestibulum sit amet enim id ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus. ",
+          "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum luctus dui, in lobortis magna feugiat eget. Nulla finibus est vel lacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id odio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, ornare at malesuada ut, pellentesque at est. Morbi eget imperdiet tortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu bibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras vestibulum sit amet enim id ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus. "
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "z1u5w6pzdc79"
+          }
+        },
+        "id": "2kPUSz4bsWTnC0WCMqDFa3",
+        "type": "Entry",
+        "createdAt": "2024-02-15T15:54:38.858Z",
+        "updatedAt": "2024-02-15T15:54:38.858Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "author"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "George R.R. Martin"
+        },
+        "nationality": {
+          "en-US": "United States"
+        },
+        "biography": {
+          "en-US": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum luctus dui, in lobortis magna feugiat eget. Nulla finibus est vel lacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id odio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, ornare at malesuada ut, pellentesque at est. Morbi eget imperdiet tortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu bibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras vestibulum sit amet enim id ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus. ",
+          "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum luctus dui, in lobortis magna feugiat eget. Nulla finibus est vel lacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id odio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, ornare at malesuada ut, pellentesque at est. Morbi eget imperdiet tortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu bibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras vestibulum sit amet enim id ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus. "
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "z1u5w6pzdc79"
+          }
+        },
+        "id": "4bssb2LO8Ha4vXzfvTZ0zz",
+        "type": "Entry",
+        "createdAt": "2024-02-15T15:55:00.278Z",
+        "updatedAt": "2024-02-15T15:55:00.278Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "author"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "J.K. Rowling"
+        },
+        "nationality": {
+          "en-US": "United Kingdom"
+        },
+        "biography": {
+          "en-US": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum luctus dui, in lobortis magna feugiat eget. Nulla finibus est vel lacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id odio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, ornare at malesuada ut, pellentesque at est. Morbi eget imperdiet tortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu bibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras vestibulum sit amet enim id ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus. ",
+          "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum luctus dui, in lobortis magna feugiat eget. Nulla finibus est vel lacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id odio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, ornare at malesuada ut, pellentesque at est. Morbi eget imperdiet tortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu bibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras vestibulum sit amet enim id ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus. "
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "z1u5w6pzdc79"
+          }
+        },
+        "id": "3hrk7dl0Yet0cpL3uuLNgu",
+        "type": "Entry",
+        "createdAt": "2024-02-15T15:55:19.558Z",
+        "updatedAt": "2024-02-15T15:55:19.558Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "author"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Stieg Larsson"
+        },
+        "nationality": {
+          "en-US": "Sweden"
+        },
+        "biography": {
+          "en-US": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum luctus dui, in lobortis magna feugiat eget. Nulla finibus est vel lacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id odio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, ornare at malesuada ut, pellentesque at est. Morbi eget imperdiet tortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu bibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras vestibulum sit amet enim id ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus. ",
+          "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum luctus dui, in lobortis magna feugiat eget. Nulla finibus est vel lacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id odio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, ornare at malesuada ut, pellentesque at est. Morbi eget imperdiet tortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu bibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras vestibulum sit amet enim id ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus. "
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "z1u5w6pzdc79"
+          }
+        },
+        "id": "6YrclIsV38DUm4aSi7cn7T",
+        "type": "Entry",
+        "createdAt": "2024-02-15T15:55:47.007Z",
+        "updatedAt": "2024-02-15T15:55:47.007Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "author"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Jane Austen"
+        },
+        "nationality": {
+          "en-US": "United Kingdom"
+        },
+        "biography": {
+          "en-US": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum luctus dui, in lobortis magna feugiat eget. Nulla finibus est vel lacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id odio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, ornare at malesuada ut, pellentesque at est. Morbi eget imperdiet tortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu bibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras vestibulum sit amet enim id ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus. ",
+          "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum luctus dui, in lobortis magna feugiat eget. Nulla finibus est vel lacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id odio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, ornare at malesuada ut, pellentesque at est. Morbi eget imperdiet tortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu bibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras vestibulum sit amet enim id ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus. "
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "z1u5w6pzdc79"
+          }
+        },
+        "id": "CElA5n43qWgJ1rIIgdWcv",
+        "type": "Entry",
+        "createdAt": "2024-02-15T15:57:06.092Z",
+        "updatedAt": "2024-02-15T15:57:06.092Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "book"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Dune",
+          "es": "Dune"
+        },
+        "authors": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6VxKcpyQDRtY7akrrs4aRv"
+              }
+            }
+          ]
+        },
+        "categories": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "2cWHvlZqfLjN8jJPPTHSRG"
+              }
+            }
+          ]
+        },
+        "synopsis": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum \nluctus dui, in lobortis magna feugiat eget. Nulla finibus est vel \nlacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id \nodio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, \nornare at malesuada ut, pellentesque at est. Morbi eget imperdiet \ntortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit\n odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu \nbibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras \nvestibulum sit amet enim id ornare. Orci varius natoque penatibus et \nmagnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          },
+          "es": {
+            "nodeType": "document",
+            "data": {
+            },
+            "content": [
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum \nluctus dui, in lobortis magna feugiat eget. Nulla finibus est vel \nlacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id \nodio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, \nornare at malesuada ut, pellentesque at est. Morbi eget imperdiet \ntortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit\n odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu \nbibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras \nvestibulum sit amet enim id ornare. Orci varius natoque penatibus et \nmagnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus.",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "status": {
+          "en-US": "Available"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "z1u5w6pzdc79"
+          }
+        },
+        "id": "7sETz91DYwNt1tuKwGwGbp",
+        "type": "Entry",
+        "createdAt": "2024-02-15T15:58:05.358Z",
+        "updatedAt": "2024-02-15T15:58:05.358Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "book"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Neuromancer",
+          "es": "Neuromante"
+        },
+        "authors": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "4mL2JUYNf1CDiBtil8byiC"
+              }
+            }
+          ]
+        },
+        "categories": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "2cWHvlZqfLjN8jJPPTHSRG"
+              }
+            }
+          ]
+        },
+        "synopsis": {
+          "en-US": {
+            "nodeType": "document",
+            "data": {
+            },
+            "content": [
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum \nluctus dui, in lobortis magna feugiat eget. Nulla finibus est vel \nlacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id \nodio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, \nornare at malesuada ut, pellentesque at est. Morbi eget imperdiet \ntortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit\n odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu \nbibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras \nvestibulum sit amet enim id ornare. Orci varius natoque penatibus et \nmagnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus.",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "es": {
+            "nodeType": "document",
+            "data": {
+            },
+            "content": [
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum \nluctus dui, in lobortis magna feugiat eget. Nulla finibus est vel \nlacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id \nodio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, \nornare at malesuada ut, pellentesque at est. Morbi eget imperdiet \ntortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit\n odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu \nbibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras \nvestibulum sit amet enim id ornare. Orci varius natoque penatibus et \nmagnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus.",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "status": {
+          "en-US": "On loan"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "z1u5w6pzdc79"
+          }
+        },
+        "id": "TaIDSK9c7dCzPfkQ7rgiW",
+        "type": "Entry",
+        "createdAt": "2024-02-15T15:59:03.404Z",
+        "updatedAt": "2024-02-15T15:59:03.404Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "book"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "The Martian",
+          "es": "El Marciano"
+        },
+        "authors": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "7gwpkFCx4YrL8FS0vlFsCj"
+              }
+            }
+          ]
+        },
+        "categories": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "2cWHvlZqfLjN8jJPPTHSRG"
+              }
+            }
+          ]
+        },
+        "synopsis": {
+          "en-US": {
+            "nodeType": "document",
+            "data": {
+            },
+            "content": [
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum \nluctus dui, in lobortis magna feugiat eget. Nulla finibus est vel \nlacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id \nodio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, \nornare at malesuada ut, pellentesque at est. Morbi eget imperdiet \ntortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit\n odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu \nbibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras \nvestibulum sit amet enim id ornare. Orci varius natoque penatibus et \nmagnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus.",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "es": {
+            "nodeType": "document",
+            "data": {
+            },
+            "content": [
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum \nluctus dui, in lobortis magna feugiat eget. Nulla finibus est vel \nlacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id \nodio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, \nornare at malesuada ut, pellentesque at est. Morbi eget imperdiet \ntortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit\n odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu \nbibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras \nvestibulum sit amet enim id ornare. Orci varius natoque penatibus et \nmagnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus.",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "status": {
+          "en-US": "Reserved"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "z1u5w6pzdc79"
+          }
+        },
+        "id": "XdOrX6ZwDjhvCHZUzTuA1",
+        "type": "Entry",
+        "createdAt": "2024-02-15T15:59:49.284Z",
+        "updatedAt": "2024-02-15T15:59:49.284Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "book"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Lord of the rings",
+          "es": "El señor de los anillos"
+        },
+        "authors": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "eS0EMeEuPeiPYL18lkEYm"
+              }
+            }
+          ]
+        },
+        "categories": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "3RF2Oky9fNlVqaLBgEIGIn"
+              }
+            }
+          ]
+        },
+        "synopsis": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum \nluctus dui, in lobortis magna feugiat eget. Nulla finibus est vel \nlacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id \nodio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, \nornare at malesuada ut, pellentesque at est. Morbi eget imperdiet \ntortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit\n odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu \nbibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras \nvestibulum sit amet enim id ornare. Orci varius natoque penatibus et \nmagnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          },
+          "es": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum \nluctus dui, in lobortis magna feugiat eget. Nulla finibus est vel \nlacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id \nodio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, \nornare at malesuada ut, pellentesque at est. Morbi eget imperdiet \ntortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit\n odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu \nbibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras \nvestibulum sit amet enim id ornare. Orci varius natoque penatibus et \nmagnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        },
+        "status": {
+          "en-US": "Available"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "z1u5w6pzdc79"
+          }
+        },
+        "id": "5vKFNObGpaHVNzv7Vmpwu1",
+        "type": "Entry",
+        "createdAt": "2024-02-15T16:00:36.889Z",
+        "updatedAt": "2024-02-15T16:00:36.889Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "book"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "A Song of Ice and Fire",
+          "es": "Canción de Hielo y Fuego"
+        },
+        "authors": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "2kPUSz4bsWTnC0WCMqDFa3"
+              }
+            }
+          ]
+        },
+        "categories": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "3RF2Oky9fNlVqaLBgEIGIn"
+              }
+            }
+          ]
+        },
+        "synopsis": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum \nluctus dui, in lobortis magna feugiat eget. Nulla finibus est vel \nlacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id \nodio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, \nornare at malesuada ut, pellentesque at est. Morbi eget imperdiet \ntortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit\n odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu \nbibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras \nvestibulum sit amet enim id ornare. Orci varius natoque penatibus et \nmagnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          },
+          "es": {
+            "nodeType": "document",
+            "data": {
+            },
+            "content": [
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum \nluctus dui, in lobortis magna feugiat eget. Nulla finibus est vel \nlacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id \nodio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, \nornare at malesuada ut, pellentesque at est. Morbi eget imperdiet \ntortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit\n odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu \nbibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras \nvestibulum sit amet enim id ornare. Orci varius natoque penatibus et \nmagnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus.",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "status": {
+          "en-US": "Reserved"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "z1u5w6pzdc79"
+          }
+        },
+        "id": "iAXR5s6vdYeRMv0vTYtFW",
+        "type": "Entry",
+        "createdAt": "2024-02-15T16:01:08.118Z",
+        "updatedAt": "2024-02-15T16:01:08.118Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "book"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Harry Potter",
+          "es": "Harry Potter"
+        },
+        "authors": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "4bssb2LO8Ha4vXzfvTZ0zz"
+              }
+            }
+          ]
+        },
+        "categories": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "3RF2Oky9fNlVqaLBgEIGIn"
+              }
+            }
+          ]
+        },
+        "synopsis": {
+          "en-US": {
+            "nodeType": "document",
+            "data": {
+            },
+            "content": [
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum \nluctus dui, in lobortis magna feugiat eget. Nulla finibus est vel \nlacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id \nodio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, \nornare at malesuada ut, pellentesque at est. Morbi eget imperdiet \ntortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit\n odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu \nbibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras \nvestibulum sit amet enim id ornare. Orci varius natoque penatibus et \nmagnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus.",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "es": {
+            "nodeType": "document",
+            "data": {
+            },
+            "content": [
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum \nluctus dui, in lobortis magna feugiat eget. Nulla finibus est vel \nlacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id \nodio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, \nornare at malesuada ut, pellentesque at est. Morbi eget imperdiet \ntortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit\n odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu \nbibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras \nvestibulum sit amet enim id ornare. Orci varius natoque penatibus et \nmagnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus.",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "status": {
+          "en-US": "Out of Stock"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "z1u5w6pzdc79"
+          }
+        },
+        "id": "HpBvXlUnX8u9wnj8K2PM7",
+        "type": "Entry",
+        "createdAt": "2024-02-15T16:02:08.406Z",
+        "updatedAt": "2024-02-15T16:02:08.406Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "book"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "The girl with the Dragoon Tattoo",
+          "es": "Los hombres que no amaban a las mujeres"
+        },
+        "authors": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "3hrk7dl0Yet0cpL3uuLNgu"
+              }
+            }
+          ]
+        },
+        "categories": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "73uO681GQuu7jCfFiwP4oi"
+              }
+            }
+          ]
+        },
+        "synopsis": {
+          "en-US": {
+            "nodeType": "document",
+            "data": {
+            },
+            "content": [
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum \nluctus dui, in lobortis magna feugiat eget. Nulla finibus est vel \nlacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id \nodio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, \nornare at malesuada ut, pellentesque at est. Morbi eget imperdiet \ntortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit\n odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu \nbibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras \nvestibulum sit amet enim id ornare. Orci varius natoque penatibus et \nmagnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus.",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "es": {
+            "nodeType": "document",
+            "data": {
+            },
+            "content": [
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum \nluctus dui, in lobortis magna feugiat eget. Nulla finibus est vel \nlacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id \nodio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, \nornare at malesuada ut, pellentesque at est. Morbi eget imperdiet \ntortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit\n odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu \nbibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras \nvestibulum sit amet enim id ornare. Orci varius natoque penatibus et \nmagnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus.",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "status": {
+          "en-US": "Sold"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "z1u5w6pzdc79"
+          }
+        },
+        "id": "4mpIyNVuUMzvlczDFRw639",
+        "type": "Entry",
+        "createdAt": "2024-02-15T16:02:58.139Z",
+        "updatedAt": "2024-02-15T16:02:58.139Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "book"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Pride & Prejudice",
+          "es": "Orgullo y Prejuicio"
+        },
+        "authors": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6YrclIsV38DUm4aSi7cn7T"
+              }
+            }
+          ]
+        },
+        "categories": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "5aLoGEXzT20pVjJGKel1GL"
+              }
+            }
+          ]
+        },
+        "synopsis": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum \nluctus dui, in lobortis magna feugiat eget. Nulla finibus est vel \nlacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id \nodio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, \nornare at malesuada ut, pellentesque at est. Morbi eget imperdiet \ntortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit\n odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu \nbibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras \nvestibulum sit amet enim id ornare. Orci varius natoque penatibus et \nmagnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          },
+          "es": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum \nluctus dui, in lobortis magna feugiat eget. Nulla finibus est vel \nlacinia auctor. Sed ut tellus auctor elit ultricies rhoncus iaculis id \nodio. Cras laoreet congue felis eget fringilla. Etiam ipsum libero, \nornare at malesuada ut, pellentesque at est. Morbi eget imperdiet \ntortor. Nam eget placerat purus, a pretium lorem. Praesent dapibus velit\n odio, id hendrerit mauris dignissim vitae. Morbi laoreet quam diam, eu \nbibendum orci tincidunt sit amet. Integer tempus massa sapien. Cras \nvestibulum sit amet enim id ornare. Orci varius natoque penatibus et \nmagnis dis parturient montes, nascetur ridiculus mus. Ut a lacus risus.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        },
+        "status": {
+          "en-US": "Available"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "z1u5w6pzdc79"
+          }
+        },
+        "id": "69diOswW6MxOgkS4Bgkopn",
+        "type": "Entry",
+        "createdAt": "2024-02-16T08:58:30.043Z",
+        "updatedAt": "2024-02-16T08:58:30.043Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "book"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Children of Dune",
+          "es": "Hijos de Dune"
+        },
+        "authors": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6VxKcpyQDRtY7akrrs4aRv"
+              }
+            }
+          ]
+        },
+        "categories": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "2cWHvlZqfLjN8jJPPTHSRG"
+              }
+            }
+          ]
+        },
+        "synopsis": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus \neleifend scelerisque libero, nec dignissim massa pharetra non. Aliquam \nnec fringilla ligula, sed imperdiet nunc. Donec hendrerit efficitur \nfelis, id efficitur lacus hendrerit quis. Cras aliquam ac est a feugiat.\n Nam faucibus vulputate orci ac elementum. Aenean sit amet lectus eget \nmetus tristique lobortis sed eu ipsum. Sed maximus malesuada massa. \nProin eget interdum felis. Cras nulla purus, consectetur eu commodo ut, \nconsectetur a eros. Phasellus quis velit suscipit, venenatis nunc ac, \ndapibus nulla.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        },
+        "status": {
+          "en-US": "Sold"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "z1u5w6pzdc79"
+          }
+        },
+        "id": "6aktnURjPy0NOniGSUfWGf",
+        "type": "Entry",
+        "createdAt": "2024-02-16T08:59:44.775Z",
+        "updatedAt": "2024-02-16T08:59:44.775Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "book"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Artemis",
+          "es": "Artemis"
+        },
+        "authors": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "7gwpkFCx4YrL8FS0vlFsCj"
+              }
+            }
+          ]
+        },
+        "categories": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "2cWHvlZqfLjN8jJPPTHSRG"
+              }
+            }
+          ]
+        },
+        "synopsis": {
+          "en-US": {
+            "nodeType": "document",
+            "data": {
+            },
+            "content": [
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porta \nnisl consectetur lacus bibendum dignissim. Nullam volutpat, dui eu \nmalesuada posuere, neque metus cursus orci, nec eleifend lectus ante \nquis dolor. Aenean ut iaculis leo. Maecenas quis laoreet ante. In non \nmassa a massa euismod auctor. Nunc ac finibus justo. Vestibulum ante \nipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; \nDonec tempus elit nec finibus ultrices. Donec eu eleifend mi. Duis ut \nmaximus metus. Integer odio erat, iaculis vel est quis, efficitur \nefficitur magna. Vestibulum pulvinar metus in felis euismod pretium. Sed\n erat augue, egestas et consectetur ut, maximus in metus. Cras at libero\n non velit fermentum faucibus.",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "status": {
+          "en-US": "Reserved"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "z1u5w6pzdc79"
+          }
+        },
+        "id": "3QAKdShEDDOSu4rTbJHhnC",
+        "type": "Entry",
+        "createdAt": "2024-02-16T09:01:18.931Z",
+        "updatedAt": "2024-02-16T09:01:18.931Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "book"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "The Girl Who Played with Fire",
+          "es": "La chica que soñaba con un cerillo y un galón de gasolina"
+        },
+        "authors": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "3hrk7dl0Yet0cpL3uuLNgu"
+              }
+            }
+          ]
+        },
+        "categories": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "73uO681GQuu7jCfFiwP4oi"
+              }
+            }
+          ]
+        },
+        "synopsis": {
+          "en-US": {
+            "nodeType": "document",
+            "data": {
+            },
+            "content": [
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porta \nnisl consectetur lacus bibendum dignissim. Nullam volutpat, dui eu \nmalesuada posuere, neque metus cursus orci, nec eleifend lectus ante \nquis dolor. Aenean ut iaculis leo. Maecenas quis laoreet ante. In non \nmassa a massa euismod auctor. Nunc ac finibus justo. Vestibulum ante \nipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; \nDonec tempus elit nec finibus ultrices. Donec eu eleifend mi. Duis ut \nmaximus metus. Integer odio erat, iaculis vel est quis, efficitur \nefficitur magna. Vestibulum pulvinar metus in felis euismod pretium. Sed\n erat augue, egestas et consectetur ut, maximus in metus. Cras at libero\n non velit fermentum faucibus.",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "status": {
+          "en-US": "Available"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "z1u5w6pzdc79"
+          }
+        },
+        "id": "1YFTGXpohaspL2XzyGhJ09",
+        "type": "Entry",
+        "createdAt": "2024-02-16T09:02:17.202Z",
+        "updatedAt": "2024-02-16T09:02:17.202Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "book"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Emma",
+          "es": "Emma"
+        },
+        "authors": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6YrclIsV38DUm4aSi7cn7T"
+              }
+            }
+          ]
+        },
+        "categories": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "5aLoGEXzT20pVjJGKel1GL"
+              }
+            }
+          ]
+        },
+        "synopsis": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porta \nnisl consectetur lacus bibendum dignissim. Nullam volutpat, dui eu \nmalesuada posuere, neque metus cursus orci, nec eleifend lectus ante \nquis dolor. Aenean ut iaculis leo. Maecenas quis laoreet ante. In non \nmassa a massa euismod auctor. Nunc ac finibus justo. Vestibulum ante \nipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; \nDonec tempus elit nec finibus ultrices. Donec eu eleifend mi. Duis ut \nmaximus metus. Integer odio erat, iaculis vel est quis, efficitur \nefficitur magna. Vestibulum pulvinar metus in felis euismod pretium. Sed\n erat augue, egestas et consectetur ut, maximus in metus. Cras at libero\n non velit fermentum faucibus.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          },
+          "es": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porta \nnisl consectetur lacus bibendum dignissim. Nullam volutpat, dui eu \nmalesuada posuere, neque metus cursus orci, nec eleifend lectus ante \nquis dolor. Aenean ut iaculis leo. Maecenas quis laoreet ante. In non \nmassa a massa euismod auctor. Nunc ac finibus justo. Vestibulum ante \nipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; \nDonec tempus elit nec finibus ultrices. Donec eu eleifend mi. Duis ut \nmaximus metus. Integer odio erat, iaculis vel est quis, efficitur \nefficitur magna. Vestibulum pulvinar metus in felis euismod pretium. Sed\n erat augue, egestas et consectetur ut, maximus in metus. Cras at libero\n non velit fermentum faucibus.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        },
+        "status": {
+          "en-US": "Sold"
+        }
+      }
+    }
+  ],
+  "assets": [
+  ],
+  "locales": [
+    {
+      "name": "English (United States)",
+      "code": "en-US",
+      "fallbackCode": null,
+      "default": true,
+      "contentManagementApi": true,
+      "contentDeliveryApi": true,
+      "optional": false,
+      "sys": {
+        "type": "Locale",
+        "id": "4aJ6sah1xQ1Ixtt7PTCH1Q",
+        "version": 1,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "z1u5w6pzdc79"
+          }
+        },
+        "environment": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Environment",
+            "id": "master",
+            "uuid": "5c5f9acd-c1b3-45da-a22a-62b130cd0889"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5hShE7lhLdfQiaY3XkAZVQ"
+          }
+        },
+        "createdAt": "2024-02-15T14:50:50Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5hShE7lhLdfQiaY3XkAZVQ"
+          }
+        },
+        "updatedAt": "2024-02-15T14:50:50Z"
+      }
+    },
+    {
+      "name": "Spanish",
+      "code": "es",
+      "fallbackCode": "en-US",
+      "default": false,
+      "contentManagementApi": true,
+      "contentDeliveryApi": true,
+      "optional": false,
+      "sys": {
+        "type": "Locale",
+        "id": "3jYrw06hlIGNXaiqOpm7wB",
+        "version": 1,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "z1u5w6pzdc79"
+          }
+        },
+        "environment": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Environment",
+            "id": "master",
+            "uuid": "5c5f9acd-c1b3-45da-a22a-62b130cd0889"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5hShE7lhLdfQiaY3XkAZVQ"
+          }
+        },
+        "createdAt": "2024-02-15T14:57:13Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5hShE7lhLdfQiaY3XkAZVQ"
+          }
+        },
+        "updatedAt": "2024-02-15T14:57:13Z"
+      }
+    }
+  ],
+  "roles": [
+    {
+      "name": "Author",
+      "description": "Allows editing of content",
+      "policies": [
+        {
+          "effect": "allow",
+          "actions": [
+            "create"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Entry"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "read"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Entry"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "update"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Entry"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "create"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Asset"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "read"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Asset"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "update"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Asset"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "permissions": {
+        "ContentModel": [
+          "read"
+        ],
+        "Settings": [
+        ],
+        "ContentDelivery": [
+        ],
+        "Environments": [
+        ],
+        "EnvironmentAliases": [
+        ],
+        "Tags": [
+        ]
+      },
+      "sys": {
+        "type": "Role",
+        "id": "4b7gLNmYHfcrCImAjLDl2m",
+        "version": 0,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "z1u5w6pzdc79"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5hShE7lhLdfQiaY3XkAZVQ"
+          }
+        },
+        "createdAt": "2024-02-15T14:50:51Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5hShE7lhLdfQiaY3XkAZVQ"
+          }
+        },
+        "updatedAt": "2024-02-15T14:50:51Z"
+      }
+    },
+    {
+      "name": "Editor",
+      "description": "Allows editing, publishing and archiving of content",
+      "policies": [
+        {
+          "effect": "allow",
+          "actions": "all",
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Entry"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": "all",
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Asset"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "permissions": {
+        "ContentModel": [
+          "read"
+        ],
+        "Settings": [
+        ],
+        "ContentDelivery": [
+        ],
+        "Environments": [
+        ],
+        "EnvironmentAliases": [
+        ],
+        "Tags": [
+        ]
+      },
+      "sys": {
+        "type": "Role",
+        "id": "4b863YFijYI1wBaKlp38bs",
+        "version": 0,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "z1u5w6pzdc79"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5hShE7lhLdfQiaY3XkAZVQ"
+          }
+        },
+        "createdAt": "2024-02-15T14:50:51Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5hShE7lhLdfQiaY3XkAZVQ"
+          }
+        },
+        "updatedAt": "2024-02-15T14:50:51Z"
+      }
+    },
+    {
+      "name": "Translator",
+      "description": "Allows editing of localized fields in the specified language",
+      "policies": [
+        {
+          "effect": "allow",
+          "actions": [
+            "read"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Entry"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "read"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Asset"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "update"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Entry"
+                ]
+              },
+              {
+                "paths": [
+                  {
+                    "doc": "fields.%.%"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "update"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Asset"
+                ]
+              },
+              {
+                "paths": [
+                  {
+                    "doc": "fields.%.%"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "permissions": {
+        "ContentModel": [
+          "read"
+        ],
+        "Settings": [
+        ],
+        "ContentDelivery": [
+        ],
+        "Environments": [
+        ],
+        "EnvironmentAliases": [
+        ],
+        "Tags": [
+        ]
+      },
+      "sys": {
+        "type": "Role",
+        "id": "4b8M8skDe41TGeoUngnkey",
+        "version": 0,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "z1u5w6pzdc79"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5hShE7lhLdfQiaY3XkAZVQ"
+          }
+        },
+        "createdAt": "2024-02-15T14:50:51Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5hShE7lhLdfQiaY3XkAZVQ"
+          }
+        },
+        "updatedAt": "2024-02-15T14:50:51Z"
+      }
+    }
+  ]
+}
