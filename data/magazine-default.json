@@ -1,0 +1,108 @@
+{
+  "entries": [
+    {
+      "fields": {
+        "authors": {
+          "en-US": [
+            {
+              "sys": {
+                "id": "authorID1",
+                "linkType": "Entry",
+                "type": "Link"
+              }
+            },
+            {
+              "sys": {
+                "id": "authorID2",
+                "linkType": "Entry",
+                "type": "Link"
+              }
+            }
+          ]
+        },
+        "categories": {
+          "en-US": [
+            {
+              "sys": {
+                "id": "categoryID1",
+                "linkType": "Entry",
+                "type": "Link"
+              }
+            },
+            {
+              "sys": {
+                "id": "categoryID2",
+                "linkType": "Entry",
+                "type": "Link"
+              }
+            }
+          ]
+        },
+        "content": {
+          "en-US": "Shalala shalala shalalauuu"
+        },
+        "publicationDate": {
+          "en-US": "2024-05-12T00:00:00Z"
+        },
+        "title": {
+          "en-US": "Super magazine no 1"
+        }
+      },
+      "sys": {
+        "contentType": {
+          "sys": {
+            "id": "magazine",
+            "linkType": "ContentType",
+            "type": "Link"
+          }
+        },
+        "id": "magazine1"
+      }
+    },
+    {
+      "fields": {
+        "authors": {
+          "en-US": [
+            {
+              "sys": {
+                "id": "authorID3",
+                "linkType": "Entry",
+                "type": "Link"
+              }
+            }
+          ]
+        },
+        "categories": {
+          "en-US": [
+            {
+              "sys": {
+                "id": "categoryID3",
+                "linkType": "Entry",
+                "type": "Link"
+              }
+            }
+          ]
+        },
+        "content": {
+          "en-US": "Turururu tururu tururu"
+        },
+        "publicationDate": {
+          "en-US": "2024-05-13T00:00:00Z"
+        },
+        "title": {
+          "en-US": "Mag-ma mag"
+        }
+      },
+      "sys": {
+        "contentType": {
+          "sys": {
+            "id": "magazine",
+            "linkType": "ContentType",
+            "type": "Link"
+          }
+        },
+        "id": "magazine2"
+      }
+    }
+  ]
+}

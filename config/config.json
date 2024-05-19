@@ -1,9 +1,6 @@
 {
-  "contentFile": "data/contentful-space.json",
   "environmentId": "master",
-  "errorLogFile": "./error.log",
   "host": "api.contentful.com",
   "managementToken": "CFPAT-plWiWydZvghez65Q8BREMxj3P04T_dhHVi88gGfJPE4",
-  "skipContentModel": false,
   "spaceId": "938kmtss42zo"
 }

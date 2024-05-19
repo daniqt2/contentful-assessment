@@ -1,15 +1,22 @@
 {
   "name": "contentful-assestment",
   "version": "0.0.0",
+  "type": "module",
   "description": "Full Stack Developer Contenful Assestment",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "export": "contentful space export --config config/export.json",
-    "import": "contentful space import --config config/import.json"
+    "import": "contentful space import --config config/import.json",
+    "magazine-migration": "contentful space migration --config config/config.json migrations/01-create-magazine.migration.ts"
   },
   "author": "Tailor Hub",
   "license": "ISC",
   "dependencies": {
-    "contentful-cli": "^3.1.43"
+    "contentful-cli": "^3.1.43",
+    "contentful-migration": "^4.20.2",
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.11"
   }
 }
