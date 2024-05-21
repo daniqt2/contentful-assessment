@@ -1,20 +1,18 @@
 import { MigrationFunction } from "contentful-migration";
-// "magazine-migration": "node_modules/.bin/ts-node node_modules/.bin/contentful-migration --config config/config.json migrations/01-create-magazine.migration.ts --yes"
 
-const options = {
-  environmentId: "master",
-  host: "api.contentful.com",
-  managementToken: "CFPAT-plWiWydZvghez65Q8BREMxj3P04T_dhHVi88gGfJPE4",
-  spaceId: "938kmtss42zo",
-};
-const migration: MigrationFunction = (migration, options) => {
-  // Create Magazine content type
+// const options = {
+//   environmentId: "master",
+//   host: "api.contentful.com",
+//   managementToken: "CFPAT-plWiWydZvghez65Q8BREMxj3P04T_dhHVi88gGfJPE4",
+//   spaceId: "938kmtss42zo",
+// };
+
+const migration: MigrationFunction = (migration) => {
   const magazine = migration
     .createContentType("magazine")
     .name("Magazine")
     .description("A magazine content type");
 
-  // Define fields for Magazine content type
   magazine
     .createField("title")
     .name("Title")
@@ -59,7 +57,6 @@ const migration: MigrationFunction = (migration, options) => {
     to: [],
     shouldPublish: true,
     transformEntryForLocale: (entry, api) => {
-      
       const fields = {
         title: {
           "en-US": "Super magazine vol 1",

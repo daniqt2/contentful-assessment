@@ -1,0 +1,30 @@
+stages:
+  - install
+  - migrate-magazine
+  - migrate-books
+
+variables:
+  NODE_ENV: "production"
+
+cache:
+  paths:
+    - node_modules/
+
+install_dependencies:
+  stage: install
+  script:
+    - echo "Installing dependencies..."
+    - yarn
+
+install_dependencies:
+  stage: migrate-magazine
+  script:
+    - echo "Magazine migration..."
+    - yarn run magazine-migration
+
+install_dependencies:
+  stage: migrate-books
+  script:
+    - echo "Book migration..."
+    - yarn run book-migration
+
