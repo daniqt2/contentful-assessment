@@ -1,5 +1,6 @@
 stages:
   - install
+  - default-migration
   - migrate-magazine
   - migrate-books
 
@@ -14,17 +15,25 @@ install_dependencies:
   stage: install
   script:
     - echo "Installing dependencies..."
-    - yarn
+    - npm install
+
+
+install_dependencies:
+  stage: default-migration
+  script:
+    - echo "Installing dependencies..."
+    - npm run import
+
 
 install_dependencies:
   stage: migrate-magazine
   script:
     - echo "Magazine migration..."
-    - yarn run magazine-migration
+    - npm run magazine-migration
 
 install_dependencies:
   stage: migrate-books
   script:
     - echo "Book migration..."
-    - yarn run book-migration
+    - npm run book-migration
 
