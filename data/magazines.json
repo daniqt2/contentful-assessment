@@ -45,7 +45,8 @@
           "en-US": "2024-05-12T00:00:00Z"
         },
         "title": {
-          "en-US": "Super magazine no 1"
+          "en-US": "Super magazine no 1",
+          "es": "super en esp 1"
         }
       },
       "sys": {
@@ -90,7 +91,8 @@
           "en-US": "2024-05-13T00:00:00Z"
         },
         "title": {
-          "en-US": "Mag-ma mag"
+          "en-US": "Mag-ma mag",
+          "es": "super en esp 2"
         }
       },
       "sys": {

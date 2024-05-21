@@ -7,8 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "export": "contentful space export --config config/export.json",
     "import": "contentful space import --config config/import.json",
-    "magazine-migration": "contentful space migration --config config/config.json migrations/01-create-magazine.migration.ts",
-    "book-migration": "contentful space migration --config config/config.json migrations/02-book-edition.migration.ts"
+    "create-magazines": "contentful space migration --config config/config.json migrations/01-create-magazine.migration.ts --yes",
+    "add-magazine": "contentful space import --config config/config.json --content-file data/magazines.json",
+    "magazine-migration": "yarn run create-magazines && yarn run add-magazine",
+    "book-migration": "contentful space migration --config config/config.json migrations/02-book-edition.migration.ts --yes"
   },
   "author": "Tailor Hub",
   "license": "ISC",
